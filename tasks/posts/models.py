@@ -3,18 +3,6 @@ from __future__ import unicode_literals
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.contrib.auth.models import User
-#User = get_user_model()
-
-# Create your models here.
-
-#class User(models.Model):
-#    first_name = models.CharField(max_length=50)
-#    last_name = models.CharField(max_length=50)
-#    email = models.EmailField(unique=True)
-#    phone_number = models.CharField(max_length=14)
-    
-#    USERNAME_FIELD = 'email'
-#    REQUIRED_FIELDS = ['first_name', 'last_name', 'email',]
    
 class Post(models.Model):
     creator = models.ForeignKey(User, related_name='creator_post_set', null=True, on_delete=models.CASCADE)
