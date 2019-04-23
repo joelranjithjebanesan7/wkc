@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'task_db',
         'USER': 'root',
-        'PASSWORD': '9942628186Jm',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': 5432 
     }
@@ -116,11 +116,16 @@ REST_FRAMEWORK = {
 
     'DEFAULT_PERMISSION_CLASSES': [
         #'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    ],
+    #'DEFAULT_AUTHENTICATION_CLASSES': [
+    #    'rest_framework.authentication.BasicAuthentication'
+    #]
 }
 
 DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
+#LOGOUT_URL = '/'
+#LOGIN_URL = '/api/posts/'
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
