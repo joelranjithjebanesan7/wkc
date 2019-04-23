@@ -1,8 +1,8 @@
 # Setting up the project
 
 create virtualenv:
-virtualenv -p python3 env
-Activate the environment: source env/bin/activate
+`virtualenv -p python3 env`
+Activate the environment: `source env/bin/activate`
 
 `pip install -r requirements.txt`
 
