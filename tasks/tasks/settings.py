@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'task_db',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': '********',
         'HOST': 'localhost',
         'PORT': 5432 
     }
@@ -115,7 +115,7 @@ REST_FRAMEWORK = {
     #'PAGE_SIZE': 10,
 
     'DEFAULT_PERMISSION_CLASSES': [
-        #'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.IsAuthenticated'
     ],
     #'DEFAULT_AUTHENTICATION_CLASSES': [
     #    'rest_framework.authentication.BasicAuthentication'
