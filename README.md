@@ -1,16 +1,25 @@
 # Setting up the project
 
 create virtualenv:
+
 `virtualenv -p python3 env`
 
-Activate the environment: `source env/bin/activate`
+Activate the environment: 
+
+`source env/bin/activate`
 
 `pip install -r requirements.txt`
 
 ## Setting database:
 In tasks/settings.py: configure the database and database user credentials.
 
-Run the server: `python manage.py runserver`
+Migrate the changes:
+  `python manage.py makemigrations`
+  
+  `python manage.py migrate`
+
+Run the server: 
+ `python manage.py runserver`
 
 ## URLs:
 For User Registration:
