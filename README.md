@@ -8,6 +8,8 @@ Activate the environment:
 
 `source env/bin/activate`
 
+Into the project  directory:
+
 `pip install -r requirements.txt`
 
 ## Setting database:
