@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from rest_framework.mixins import CreateModelMixin
 from rest_framework.viewsets import GenericViewSet
 from django.core.exceptions import ObjectDoesNotExist
+from rest_framework.permissions import IsAuthenticated
 
 from posts.models import Post, Follow, Like, Comment
 from posts.serializers import UserSerializer, PostSerializer, PostListSerializer, FollowSerializer, LikeSerializer, CommentSerializer
@@ -14,6 +15,7 @@ class CreateUserView(generics.CreateAPIView):
     serializer_class = UserSerializer
 
 class PostList(generics.ListCreateAPIView):
+    permission_class = IsAuthenticated
     serializer_class = PostListSerializer
     follow_model = FollowSerializer.Meta.model
     post_model = PostSerializer.Meta.model
@@ -26,10 +28,12 @@ class PostList(generics.ListCreateAPIView):
         return queryset
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_class = IsAuthenticated
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
 class FollowersList(generics.ListCreateAPIView):
+    permission_class = IsAuthenticated
     #queryset = Follow.objects.all()
     serializer_class = FollowSerializer
     def get_queryset(self):
@@ -37,18 +41,22 @@ class FollowersList(generics.ListCreateAPIView):
         return queryset 
 
 class FollowersDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_class = IsAuthenticated
     queryset = Follow.objects.all()
     serializer_class = FollowSerializer
 
 class LikeActivity(generics.CreateAPIView):
+    permission_class = IsAuthenticated
     queryset = Like.objects.all()
     serializer_class = LikeSerializer
 
 class LikeDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_class = IsAuthenticated
     queryset = Like.objects.all()
     serializer_class = LikeSerializer
 
 class CommentActivity(generics.CreateAPIView):
+    permission_class = IsAuthenticated
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 

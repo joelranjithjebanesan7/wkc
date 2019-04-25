@@ -115,13 +115,14 @@ REST_FRAMEWORK = {
     #'PAGE_SIZE': 10,
 
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
+     #   'rest_framework.permissions.IsAuthenticated'
     ],
     #'DEFAULT_AUTHENTICATION_CLASSES': [
     #    'rest_framework.authentication.BasicAuthentication'
     #]
 }
-
+LOGIN_REDIRECT_URL = 'post-list'
+#LOGOUT_REDIRECT_URL = 'login'
 DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
 #LOGOUT_URL = '/'
