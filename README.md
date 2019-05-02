@@ -25,22 +25,22 @@ Run the server:
 
 ## URLs:
 For User Registration:
-    https://localhost:8000/user/signup/
+    http://localhost:8000/user/signup/
 
 For Login:
-    https://localhost:8000/api-auth/login
+    http://localhost:8000/api-auth/login
     
 For Logout:
-    https://localhost:8000/api-auth/logout
+    http://localhost:8000/api-auth/logout
 
 For Posts:
-    https://localhost:8000/api/posts/
+    http://localhost:8000/api/posts/
 
 For Follow:
-    https://localhost:8000/followers/
+    http://localhost:8000/followers/
 
 For Like:
-    https://localhost:8000/api/like
+    http://localhost:8000/api/like
  
  For Comment:
-    https://localhost:8000/api/comment
+    http://localhost:8000/api/comment
