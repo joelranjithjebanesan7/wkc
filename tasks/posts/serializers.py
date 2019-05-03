@@ -19,9 +19,13 @@ class UserSerializer(ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('password', 'username', 'first_name', 'last_name',)
+        fields = ( 'username', 'first_name', 'last_name','password',)
+        write_only_fields = ('password',)
 
 class PostListSerializer(serializers.ModelSerializer):
+    creator = serializers.HiddenField(
+              default=serializers.CurrentUserDefault()
+              )
     class Meta:
         model = Post
         fields = ['title', 'content', 'created_date', 'creator',]
@@ -32,17 +36,26 @@ class PostSerializer(serializers.ModelSerializer):
         fields = ['title', 'content']
 
 class FollowSerializer(serializers.ModelSerializer):
+    follower = serializers.HiddenField(
+              default=serializers.CurrentUserDefault()
+              )
     class Meta:
         model = Follow
         fields = '__all__'
 
 
 class LikeSerializer(serializers.ModelSerializer):
+    liked_by = serializers.HiddenField(
+              default=serializers.CurrentUserDefault()
+              )
     class Meta:
         model = Like
         fields = ['post', 'liked_by',]
 
 class CommentSerializer(serializers.ModelSerializer):
+    comment_by = serializers.HiddenField(
+              default=serializers.CurrentUserDefault()
+              )
     class Meta:
         model = Comment
         fields = ['post', 'comment_msg', 'comment_by']

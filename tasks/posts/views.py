@@ -21,7 +21,7 @@ class PostList(generics.ListCreateAPIView):
     post_model = PostSerializer.Meta.model
     def get_queryset(self):
         try:
-           following = self.request.user.following.all().values_list('following', flat=True)  # because of related name
+           following = self.request.user.following.all().values_list('following', flat=True)
            queryset = self.post_model.objects.filter(creator_id__in = list(following)) | self.post_model.objects.filter (creator = self.request.user) 
         except self.follow_model.DoesNotExist:
             queryset = None

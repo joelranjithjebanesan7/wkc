@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'tasks.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'task_db',
+        'NAME': 'task_db2',
         'USER': 'root',
-        'PASSWORD': '********',
+        'PASSWORD': '9942628186Jm',
         'HOST': 'localhost',
         'PORT': 5432 
     }
@@ -115,7 +115,7 @@ REST_FRAMEWORK = {
     #'PAGE_SIZE': 10,
 
     'DEFAULT_PERMISSION_CLASSES': [
-     #   'rest_framework.permissions.IsAuthenticated'
+        'rest_framework.permissions.IsAuthenticated'
     ],
     #'DEFAULT_AUTHENTICATION_CLASSES': [
     #    'rest_framework.authentication.BasicAuthentication'

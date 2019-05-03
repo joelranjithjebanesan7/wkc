@@ -12,7 +12,7 @@ from .views import CreateUserView
 #urlpatterns = router.urls
 
 urlpatterns = [
-    path('posts/', views.PostList.as_view()),
+    path('posts/', views.PostList.as_view(), name="post-list"),
     path('posts/<int:pk>/', views.PostDetail.as_view()),
     path('user/signup/', views.CreateUserView.as_view()),
     path('followers/', views.FollowersList.as_view()),

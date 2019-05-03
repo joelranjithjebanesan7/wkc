@@ -11,11 +11,14 @@ class Post(models.Model):
     content = models.TextField()
     likes = models.BigIntegerField(null=True)
     comments = models.BigIntegerField(null=True)
+    
+    def __str__(self):
+        return '%s' % (self.title)
 
 class Follow(models.Model):
     follower = models.ForeignKey(User, related_name='following', null=True, on_delete=models.CASCADE)
     followed_on = models.DateTimeField(auto_now_add=True)
-    following = models.ForeignKey(User, related_name='follower',null=True, on_delete=models.CASCADE)
+    follow = models.ForeignKey(User, related_name='follower',null=True, on_delete=models.CASCADE)
 
 class Like(models.Model):
     post = models.ForeignKey(Post, null=True, on_delete=models.CASCADE)
